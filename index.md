@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>سریزو کافی</title>
+  <title>وبلاگ شخصی امید ضرغامی</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
