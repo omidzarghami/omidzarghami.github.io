@@ -4,11 +4,13 @@
   --first: 11, 70, 165;
   --second: 33, 118, 255;
   --third: 12, 55, 111;
+  --white: 255, 255,255;
   font-family: 'vazir';
 }
 
 * {
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 body {
@@ -40,14 +42,13 @@ body {
     width: 100% !important;
 
   }
-  .wrapper{
-    width: 100%;
-  }
+
   .main-content {
     flex-direction: column;
     align-items: center;
   }
-  .row{
+
+  .row {
     flex-direction: column !important;
     padding: 1rem;
 
@@ -57,14 +58,17 @@ body {
 header {
   background-color: #fff;
   color: var(--text-color);
-  s padding: 20px;
+  padding: 20px;
   text-align: center;
 }
 
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
 }
 
 h1 {
@@ -189,7 +193,6 @@ header {
 /* محتوای وسط */
 .main-content {
   display: flex;
-  margin-top: 1.5rem;
   max-width: 1280px;
   padding: 1.5rem;
   border: 1px solid #fff;
@@ -237,7 +240,7 @@ header {
   justify-content: center;
   align-items: center;
   margin-bottom: 15px;
-  background-color: rgba(var(--second), 0.1);
+  background-color: rgba(var(--second), 0.01);
   padding: 1rem;
 }
 
@@ -248,8 +251,8 @@ header {
 }
 
 .columns:hover {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  transform: scale(1.1);
+  box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+  transform: scale(1);
 }
 
 .paragraph {
@@ -305,7 +308,7 @@ header {
   right: -1px;
   top: 3px;
   border-radius: 100px;
-  background-color: rgb(var(--first));
+  background-color: rgb(var(--white));
 }
 
 .tem2-footer .tem2-topic {
@@ -359,9 +362,9 @@ li a {
   flex-wrap: wrap;
   flex-direction: row-reverse;
 }
+
 .accordion {
-  max-width: 600px;
-  margin: 0 auto;
+ margin: 0 auto;
 }
 
 .accordion-item {
@@ -380,13 +383,13 @@ li a {
   padding: 10px;
 }
 
-.FAQ{
+.FAQ {
   display: flex;
-  margin-top: 1.5rem;
-  max-width: 1280px;
+  width:100%;
   padding: 1.5rem;
   border: 1px solid #fff;
   border-radius: 30px;
   background-color: #fff;
   flex-direction: column;
+
 }
