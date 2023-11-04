@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Event Example</title>
+</head>
+<body>
+    <button id="toggleButton">Toggle Me</button>
+    <div id="content" style="display: none;">This content is hidden.</div>
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const content = document.getElementById('content');
+
+        toggleButton.addEventListener('click', function() {
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
