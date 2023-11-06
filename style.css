@@ -444,3 +444,7 @@ li a {
 .faq-item{
   padding-left: 10px;
 }
+.icon-container img{
+  width: 16px;
+  height: 16px;
+}
