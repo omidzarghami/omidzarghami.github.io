@@ -454,3 +454,8 @@ li a {
   width: 16px;
   height: 16px;
 }
+.icon-container img.active {
+  width: 16px;
+  height: 16px;
+  transform: rotate(45deg);
+}
