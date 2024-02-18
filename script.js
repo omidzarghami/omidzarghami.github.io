@@ -1,5 +1,5 @@
 const faqItems = document.querySelectorAll('.faq-item');
-
+const item = document.querySelectorAll('.faq-itmes img')
 faqItems.forEach(item => {
   const question = item.querySelector('.faq-question');
   const answer = item.nextElementSibling;
