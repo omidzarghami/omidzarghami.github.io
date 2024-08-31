@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه کند و سنگین</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>صفحه کند و سنگین</h1>
+    <p>این صفحه برای تست کندی طراحی شده است.</p>
+
+    <!-- تصاویر سنگین -->
+    <img src="./businessman-holding-growth-arrow.jpg" alt="تصویر 1">
+    <img src="./coins-stacked-dirt-with-plants.jpg" alt="تصویر 2">
+    <img src="./concept-global-economic-depression.jpg" alt="تصویر 3">
+    <img src="./top-view-office-desk-with-growth-chart-glasses.jpg" alt="تصویر 4">
+    <img src="./coins-stacked-dirt-with-plants.jpg" alt="تصویر 5">
+
+    <!-- اسکریپت سنگین -->
+    <script>
+        // اسکریپت شبیه سازی محاسبات سنگین
+        function heavyCalculation() {
+            let total = 0;
+            for (let i = 0; i < 1e8; i++) {
+                total += Math.sqrt(i) * Math.random();
+            }
+            return total;
+        }
+
+        // اجرای محاسبات سنگین
+        for (let j = 0; j < 10; j++) {
+            console.log('شروع محاسبات سنگین:', j);
+            heavyCalculation();
+        }
+    </script>
+
+    <!-- Web Vitals Script -->
+    <script type="module">
+        import { onCLS, onINP, onLCP } from 'https://unpkg.com/web-vitals@4/dist/web-vitals.attribution.js?module';
+
+        function getMetricRating(metricName, value) {
+            switch (metricName) {
+                case 'CLS':
+                    return value <= 0.1 ? 'good' : value <= 0.25 ? 'needs-improvement' : 'poor';
+                case 'INP':
+                    return value <= 200 ? 'good' : value <= 500 ? 'needs-improvement' : 'poor';
+                case 'LCP':
+                    return value <= 2500 ? 'good' : value <= 4000 ? 'needs-improvement' : 'poor';
+                default:
+                    return 'unknown';
+            }
+        }
+
+        function getAttribution(name, attribution) {
+            switch (name) {
+                case 'CLS':
+                    return attribution.largestShiftTarget;
+                case 'INP':
+                    return attribution.interactionTarget;
+                case 'LCP':
+                    return attribution.element;
+                default:
+                    return 'unknown';
+            }
+        }
+
+        function sendToGoogleAnalytics({ name, delta, value, id, attribution }) {
+            let rating = getMetricRating(name, value);
+            let target_element = getAttribution(name, attribution);
+            gtag('event', name, {
+                value: delta,
+                metric_id: id,
+                metric_value: value,
+                metric_delta: delta,
+                metric_rating: rating,
+                debug_target: target_element
+            });
+        }
+
+        onCLS(sendToGoogleAnalytics);
+        onINP(sendToGoogleAnalytics);
+        onLCP(sendToGoogleAnalytics);
+    </script>
+
+</body>
+</html>
